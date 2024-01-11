@@ -1,3 +1,4 @@
+import 'package:firsttest/const/color_utils.dart';
 import 'package:firsttest/const/image.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -10,6 +11,8 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+
+  final TextEditingController searchController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -54,7 +57,33 @@ class _HomePageState extends State<HomePage> {
                     height: 40,
                   ),
                   Container(
-                    
+                    decoration: BoxDecoration(
+                    color: gray1,
+                      
+                      borderRadius: BorderRadius.circular(20)),
+                    padding: EdgeInsets.all(8),
+                    child: Row(
+                      children: [
+
+                        Icon(Icons.search, size: 30, color: Color(0xff868A91),),
+                        SizedBox(
+                          width: 5,
+                        ),
+                        Expanded(
+                          child: TextFormField(
+                            controller: searchController,
+                            decoration: InputDecoration(
+                              hintStyle: GoogleFonts.raleway(
+                                fontSize: 20,
+                                fontWeight: FontWeight.w400),
+                              hintText: "search",
+                              enabledBorder: UnderlineInputBorder(
+                              borderSide: BorderSide(color: Colors.transparent),),
+                              focusedBorder: UnderlineInputBorder(borderSide: BorderSide(color: Colors.transparent),),),
+                          ),
+                        )
+                      ],
+                    ),
                   )
               ],
           ),) ,)),
