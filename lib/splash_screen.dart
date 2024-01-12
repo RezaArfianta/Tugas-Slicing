@@ -15,11 +15,12 @@ class SplashScreen extends StatefulWidget {
 
 class _SplashScreenState extends State<SplashScreen> {
   @override
-  void initState(){
+  void initState() {
     super.initState();
     // Future.delayed(Duration(seconds: 2)).whenComplete(() => KatingTest());
     Timer(Duration(seconds: 2), () {
-      Navigator.push(context as BuildContext, MaterialPageRoute(builder: (context)=> HomePage()));
+      Navigator.push(context as BuildContext,
+          MaterialPageRoute(builder: (context) => NavBar()));
     });
   }
 

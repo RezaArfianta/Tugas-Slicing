@@ -1,7 +1,23 @@
+import 'package:firsttest/checkout.dart';
 import 'package:firsttest/const/image.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+
 // Ini Adalah widget
-class KatingTest extends StatelessWidget {
+class DetailProduk extends StatefulWidget {
+  final String text;
+  final String image;
+  final String price;
+  const DetailProduk(
+      {super.key,
+      required this.image,
+      required this.text,
+      required this.price});
+  @override
+  State<DetailProduk> createState() => _DetailProdukState();
+}
+
+class _DetailProdukState extends State<DetailProduk> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
@@ -12,21 +28,28 @@ class KatingTest extends StatelessWidget {
             child: SingleChildScrollView(
               child: Column(
                 children: [
+                  SizedBox(
+                    height: 10,
+                  ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Icon(
-                        Icons.chevron_left_outlined,
-                        size: 40,
+                      GestureDetector(
+                        child: Icon(
+                          Icons.chevron_left_outlined,
+                          size: 30,
+                        ),
+                        onTap: () {
+                          Navigator.pop(context);
+                        },
                       ),
                       Container(
-                        width: 80,
-                        height: 80,
+                        width: 59,
                         child: Image.asset(logo),
                       ),
                       Icon(
                         Icons.favorite,
-                        size: 40,
+                        size: 30,
                         color: Colors.red,
                       ),
                     ],
@@ -37,7 +60,7 @@ class KatingTest extends StatelessWidget {
                   Container(
                     width: 380,
                     height: 400,
-                    child: Image.asset('assets/images/coffee.png'),
+                    child: Image.asset(widget.image),
                   ),
                   SizedBox(
                     height: 20,
@@ -45,16 +68,14 @@ class KatingTest extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text(
-                        "Chocolate Frappuccino",
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 22,
-                        ),
+                      Flexible(
+                        child: Text(widget.text,
+                            style: GoogleFonts.raleway(
+                                fontSize: 22, fontWeight: FontWeight.w500)),
                       ),
                       Text(
-                        "\$20.00",
-                        style: TextStyle(
+                        "\$${widget.price}",
+                        style: GoogleFonts.poppins(
                           color: Color(0xFF00623B),
                           fontSize: 40,
                         ),
@@ -66,9 +87,9 @@ class KatingTest extends StatelessWidget {
                   ),
                   Text(
                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam at mi vitae augue feugiat scelerisque in a eros.",
-                    style: TextStyle(
+                    style: GoogleFonts.raleway(
                       color: Color(0xFF6D6D6D),
-                      fontSize: 22,
+                      fontSize: 18,
                     ),
                   ),
                   SizedBox(
@@ -76,32 +97,40 @@ class KatingTest extends StatelessWidget {
                   ),
                   Text(
                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam at mi vitae augue feugiat scelerisque in a eros.",
-                    style: TextStyle(
+                    style: GoogleFonts.raleway(
                       color: Color(0xFF6D6D6D),
-                      fontSize: 22,
+                      fontSize: 18,
                     ),
                   ),
                   SizedBox(
                     height: 40,
                   ),
-                  Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(8),
-                      color: Color(0xFF00623B),
-                    ),
-                    padding: EdgeInsets.symmetric(
-                      vertical: 16,
-                    ),
-                    width: double.infinity,
-                    child: Center(
-                      child: Text(
-                        "Add To Bag",
-                        style: TextStyle(
-                          color: Color(0xFFFFFFFFF),
-                          fontSize: 22,
+                  GestureDetector(
+                    child: Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(8),
+                        color: Color(0xFF00623B),
+                      ),
+                      padding: EdgeInsets.symmetric(
+                        vertical: 12,
+                      ),
+                      width: double.infinity,
+                      child: Center(
+                        child: Text(
+                          "Add To Bag",
+                          style: GoogleFonts.raleway(
+                            color: Color(0xFFFFFFFFF),
+                            fontSize: 20,
+                          ),
                         ),
                       ),
                     ),
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => CheckoutPage()));
+                    },
                   ),
                   SizedBox(
                     height: 40,
