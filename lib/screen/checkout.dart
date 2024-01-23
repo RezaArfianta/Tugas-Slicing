@@ -1,7 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-
-import 'const/image.dart';
+part of 'screen_import.dart';
 
 class CheckoutPage extends StatefulWidget {
   const CheckoutPage({super.key});

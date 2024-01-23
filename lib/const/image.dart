@@ -1,4 +1,5 @@
 // import 'package:flutter/material.dart';
+part of 'const_import.dart';
 
 const logo = "assets/logo.png";
 const coffee_drink = "assets/coffee_drink.png";
