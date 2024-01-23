@@ -1,7 +1,4 @@
-import 'package:firsttest/checkout.dart';
-import 'package:firsttest/const/image.dart';
-import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+part of 'screen_import.dart';
 
 // Ini Adalah widget
 class DetailProduk extends StatefulWidget {

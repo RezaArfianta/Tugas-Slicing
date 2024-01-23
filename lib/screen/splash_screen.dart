@@ -1,10 +1,4 @@
-import 'dart:async';
-
-import 'package:firsttest/const/color_utils.dart';
-import 'package:firsttest/const/image.dart';
-import 'package:firsttest/homepage.dart';
-// import 'package:firsttest/tes.dart';
-import 'package:flutter/material.dart';
+part of 'screen_import.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});

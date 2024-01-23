@@ -1,5 +1,5 @@
-import 'package:firsttest/const/image.dart';
-import 'package:firsttest/detail_produk.dart';
+import 'package:firsttest/const/const_import.dart';
+import 'package:firsttest/screen/screen_import.dart';
 // import 'package:firsttest/tes.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';

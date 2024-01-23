@@ -1,9 +1,4 @@
-import 'package:firsttest/checkout.dart';
-import 'package:firsttest/const/card_minum.dart';
-import 'package:firsttest/const/color_utils.dart';
-import 'package:firsttest/const/image.dart';
-import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+part of 'screen_import.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
