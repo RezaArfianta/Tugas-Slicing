@@ -1,0 +1,15 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Current Device Dev",
+            "request": "launch",
+            "type": "dart",
+            "args": [
+                "--dart-define",
+                "BASE_URL=https://api.hiternak.web.id",
+            ]
+        },
+    ],
+    "compounds": []
+}

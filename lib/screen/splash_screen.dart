@@ -14,7 +14,7 @@ class _SplashScreenState extends State<SplashScreen> {
     // Future.delayed(Duration(seconds: 2)).whenComplete(() => KatingTest());
     Timer(Duration(seconds: 2), () {
       Navigator.push(context as BuildContext,
-          MaterialPageRoute(builder: (context) => NavBar()));
+          MaterialPageRoute(builder: (context) => LoginPage()));
     });
   }
 
