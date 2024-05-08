@@ -5,7 +5,11 @@
 //   LoginModel({required this.username, required this.password});
 
 //   LoginModel.fromJson(Map<String, dynamic> json) => LoginModel(username: json['username'], password: json['password']);
-
+// type LoginRequestModel struct{
+//  var email string
+//  var password string
+// }
+// var orang [n]LoginRequestModel
 // }
 class LoginRequestModel {
   LoginRequestModel({

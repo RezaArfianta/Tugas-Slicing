@@ -21,9 +21,9 @@ class LoginController extends GetxController {
   }
 
   Future<void> login() async {
-    if (globalKey.currentState!.validate()) {
-      return;
-    }
+    // if (globalKey.currentState!.validate()) {
+    //   return;
+    // }
 
     isLoading.value = true;
     final request = LoginRequestModel(
@@ -32,7 +32,8 @@ class LoginController extends GetxController {
     try {
       final isLoginSuccess = await _authRepository.login(request);
       if (isLoginSuccess) {
-        Get.offAllNamed(HomePage() as String);
+        // Get.offAllNamed(HomePage() as String);
+        Get.toNamed(HomePage.routeName);
       } else {
         Get.showSnackbar(GetSnackBar(
           message: "Login Gagal",

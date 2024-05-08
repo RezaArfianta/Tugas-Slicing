@@ -1,16 +1,20 @@
-part of 'screen_import.dart';
+part of '../screen_import.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
-
-  @override
-  State<HomePage> createState() => _HomePageState();
-}
-
-class _HomePageState extends State<HomePage> {
+class HomePage extends GetView<HomeController> {
+  HomePage({Key? key}) : super(key: key);
+  static const routeName = '/home';
+  late SharedPreferences prefs;
   final TextEditingController searchController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
+    Future logout() async {
+      var bearerOut = await SharedPreferences.getInstance();
+      bearerOut.remove('accessToken');
+      Get.toNamed(LoginPage.routeName);
+      print(bearerOut.getString('accessToken'));
+    }
+
     return Scaffold(
       body: SafeArea(
           child: Padding(
@@ -25,9 +29,12 @@ class _HomePageState extends State<HomePage> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Icon(
-                    Icons.format_list_bulleted,
-                    size: 20,
+                  GestureDetector(
+                    child: Icon(
+                      Icons.format_list_bulleted,
+                      size: 20,
+                    ),
+                    onTap: () => logout(),
                   ),
                   Container(
                     width: 58,

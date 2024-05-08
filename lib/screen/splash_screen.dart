@@ -8,13 +8,28 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
+  late SharedPreferences prefs;
+  late String finalToken;
   @override
   void initState() {
     super.initState();
     // Future.delayed(Duration(seconds: 2)).whenComplete(() => KatingTest());
-    Timer(Duration(seconds: 2), () {
-      Navigator.push(context as BuildContext,
-          MaterialPageRoute(builder: (context) => LoginPage()));
+
+    cekToken().whenComplete(() => Timer(Duration(seconds: 2), () {
+          if (finalToken != "null") {
+            Get.toNamed(HomePage.routeName);
+          } else {
+            Get.toNamed(LoginPage.routeName);
+          }
+        }));
+  }
+
+  Future cekToken() async {
+    var getToken = await SharedPreferences.getInstance();
+    var token = getToken.getString('accessToken');
+    print(token);
+    setState(() {
+      finalToken = token.toString();
     });
   }
 

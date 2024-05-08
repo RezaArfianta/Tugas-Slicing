@@ -7,7 +7,7 @@
             "type": "dart",
             "args": [
                 "--dart-define",
-                "BASE_URL=https://api.hiternak.web.id",
+                "BASE_URL=https://identikpkh.com:7061",
             ]
         },
     ],
