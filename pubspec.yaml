@@ -39,6 +39,7 @@ dependencies:
   get: ^4.6.6
   dio_logging_interceptor: ^1.0.1
   shared_preferences: ^2.2.3
+  connectivity_plus: ^6.0.3
 
 dev_dependencies:
   flutter_test:
